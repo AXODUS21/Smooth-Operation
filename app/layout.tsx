@@ -1,18 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Inter } from "next/font/google";
 import { cn } from "@lib/utils";
 import { AppProvider } from "./AppProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Smooth Operation",
@@ -30,8 +22,7 @@ export default function RootLayout({
       {/*The app provider contains the theme for the website (dark mode light mode)*/}
       <body
       className={cn(
-        geistSans.variable,
-        geistMono.variable,
+        inter.className,
         "min-h-screen bg-background antialiased"
       )}
       >

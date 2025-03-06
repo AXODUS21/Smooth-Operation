@@ -1,5 +1,6 @@
 "use client";
 
+import { Header } from "@components/Header";
 import { ThemeProvider } from "@components/ThemeProvider";
 import { Toaster } from "@components/ui/sonner";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -11,6 +12,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
+        <div className="h-16">
+          <Header/>
+        </div>
         {children}
       </ThemeProvider>
         <Toaster/>
